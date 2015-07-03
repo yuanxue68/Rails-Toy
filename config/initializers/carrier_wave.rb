@@ -1,4 +1,8 @@
 if Rails.env.production?
+
+  config.root = Rails.root.join('tmp') # adding these...
+  config.cache_dir = 'carrierwave' # ...two lines
+  
   CarrierWave.configure do |config|
     config.fog_credentials = {
       # Configuration for Amazon S3
